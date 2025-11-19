@@ -1,7 +1,9 @@
 title: 草本故事館
 description: 用故事認識中藥方劑，讓健康知識更有溫度
-baseurl: ""
-url: ""
+
+# 👉 GitHub Pages 專案站的正確設定
+url: "https://10wang-creat.github.io"
+baseurl: "/herbal-stories"
 
 author:
   name: 草本故事館
