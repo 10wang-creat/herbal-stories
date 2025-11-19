@@ -29,9 +29,9 @@ layout: default
     {% for post in site.posts limit:5 %}
       <div style="border: 2px solid #6B8E4E; border-radius: 12px; padding: 20px; margin: 20px 0; text-align: left;">
         
-        <!-- 已修正：文章標題連結 -->
+        <!-- 文章標題：固定帶上 /herbal-stories -->
         <h3>
-          <a href="{{ post.url | relative_url }}" style="text-decoration: none;">
+          <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none;">
             {{ post.title }}
           </a>
         </h3>
@@ -46,8 +46,8 @@ layout: default
 
         <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
 
-        <!-- 已修正：閱讀全文按鈕 -->
-        <a href="{{ post.url | relative_url }}" 
+        <!-- 閱讀全文：固定帶上 /herbal-stories -->
+        <a href="{{ site.baseurl }}{{ post.url }}" 
            style="color: white; background: #6B8E4E; padding: 8px 16px; border-radius: 20px; text-decoration: none;">
           閱讀全文 →
         </a>
