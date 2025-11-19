@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <style>
+    body {
+      font-family: 'Microsoft JhengHei', sans-serif;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.8;
+      color: #333;
+    }
+    nav {
+      background: #6B8E4E;
+      padding: 20px;
+      margin: -20px -20px 40px -20px;
+      border-radius: 8px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: bold;
+    }
+    nav a:hover { color: #E8B86D; }
+    h1, h2, h3 { color: #6B8E4E; }
+    a { color: #6B8E4E; }
+    .container { max-width: 800px; margin: 0 auto; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="{{ '/' | relative_url }}">🌿 草本故事館</a>
+    <a href="{{ '/about' | relative_url }}">關於</a>
+  </nav>
+  
+  <div class="container">
+    {{ content }}
+  </div>
+  
+  <footer style="margin-top: 50px; padding-top: 20px; border-top: 2px solid #eee; text-align: center;">
+    <p>&copy; 2024 草本故事館 | 用故事認識中藥方劑</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+title: 草本故事館
+description: 用故事認識中藥方劑，讓健康知識更有溫度
+baseurl: ""
+url: ""
+
+author:
+  name: 草本故事館
+  email: contact@example.com
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+permalink: /:categories/:title/
+timezone: Asia/Taipei
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+lang: zh-TW
