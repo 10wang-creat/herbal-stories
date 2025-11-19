@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<div style="text-align: center; padding: 30px 0;">
+  <h1>🌿 歡迎來到草本故事館</h1>
+  <p style="font-size: 1.3em; color: #666; margin: 20px 0;">用故事認識中藥方劑，讓健康知識更有溫度</p>
+  
+  <div style="background: linear-gradient(135deg, #6B8E4E, #8BA572); color: white; padding: 30px; border-radius: 12px; margin: 30px 0;">
+    <h2 style="color: white; margin-bottom: 15px;">✨ 我們的特色</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
+      <div>
+        <h3 style="color: #E8B86D;">📖 故事化呈現</h3>
+        <p>用生活化的故事，輕鬆理解中藥方劑</p>
+      </div>
+      <div>
+        <h3 style="color: #E8B86D;">🎭 藥材擬人化</h3>
+        <p>每味藥材都是獨特角色，記憶更深刻</p>
+      </div>
+      <div>
+        <h3 style="color: #E8B86D;">💡 實用建議</h3>
+        <p>提供適用症狀與注意事項</p>
+      </div>
+    </div>
+  </div>
+  
+  <h2>📚 最新文章</h2>
+  <div style="margin-top: 30px;">
+    {% for post in site.posts limit:5 %}
+      <div style="border: 2px solid #6B8E4E; border-radius: 12px; padding: 20px; margin: 20px 0; text-align: left;">
+        <h3>
+          <a href="{{ site.baseurl }}{{ post.url }}" style="text-decoration: none;">
+            {{ post.title }}
+          </a>
+        </h3>
+
+        <p style="color: #888; margin: 10px 0;">📅 {{ post.date | date: "%Y年%m月%d日" }}</p>
+
+        {% if post.symptoms %}
+        <p style="background: #f0f8e8; padding: 10px; border-radius: 6px; margin: 10px 0;">
+          <strong>💊 適用症狀：</strong>{{ post.symptoms }}
+        </p>
+        {% endif %}
+
+        <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+
+        <a href="{{ site.baseurl }}{{ post.url }}" 
+           style="color: white; background: #6B8E4E; padding: 8px 16px; border-radius: 20px; text-decoration: none;">
+          閱讀全文 →
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  
+  {% if site.posts.size == 0 %}
+  <div style="padding: 40px; background: #f8f9fa; border-radius: 8px; margin: 30px 0;">
+    <h3>🌱 即將推出精彩內容</h3>
+    <p>我們正在準備豐富的中藥方劑故事，敬請期待！</p>
+  </div>
+  {% endif %}
+</div>
