@@ -28,15 +28,30 @@ layout: default
   <div style="margin-top: 30px;">
     {% for post in site.posts limit:5 %}
       <div style="border: 2px solid #6B8E4E; border-radius: 12px; padding: 20px; margin: 20px 0; text-align: left;">
-        <h3><a href="{{ post.url }}" style="text-decoration: none;">{{ post.title }}</a></h3>
+        
+        <!-- 已修正：文章標題連結 -->
+        <h3>
+          <a href="{{ post.url | relative_url }}" style="text-decoration: none;">
+            {{ post.title }}
+          </a>
+        </h3>
+
         <p style="color: #888; margin: 10px 0;">📅 {{ post.date | date: "%Y年%m月%d日" }}</p>
+
         {% if post.symptoms %}
         <p style="background: #f0f8e8; padding: 10px; border-radius: 6px; margin: 10px 0;">
           <strong>💊 適用症狀：</strong>{{ post.symptoms }}
         </p>
         {% endif %}
+
         <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        <a href="{{ post.url }}" style="color: white; background: #6B8E4E; padding: 8px 16px; border-radius: 20px; text-decoration: none;">閱讀全文 →</a>
+
+        <!-- 已修正：閱讀全文按鈕 -->
+        <a href="{{ post.url | relative_url }}" 
+           style="color: white; background: #6B8E4E; padding: 8px 16px; border-radius: 20px; text-decoration: none;">
+          閱讀全文 →
+        </a>
+
       </div>
     {% endfor %}
   </div>
